@@ -1,3 +1,4 @@
+set nocompatible
 " nnoremap <SPACE> <Nop>
 let mapleader=" "
 set visualbell
@@ -40,3 +41,15 @@ vnoremap <C-g> gb
 set hlsearch
 nnoremap <esc> :noh<CR>
 " nnoremap <esc>^[ <esc>^[
+nnoremap <C-p> :GFiles<Cr>
+
+
+call plug#begin()
+Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'LunarWatcher/auto-pairs'
+Plug 'maxboisvert/vim-simple-complete'
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'joshdick/onedark.vim'
+call plug#end()
