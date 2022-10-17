@@ -1,5 +1,4 @@
 set nocompatible
-" nnoremap <SPACE> <Nop>
 let mapleader=" "
 set visualbell
 set ignorecase
@@ -16,20 +15,8 @@ noremap <leader>l L
 noremap <leader>m M
 noremap L $
 noremap H ^
-" noremap gj o<Esc>
-" noremap gk O<Esc>
-" noremap t <C-r>
 set clipboard=unnamed
-" nmap <Leader>c ciw
-" nmap <Leader>d diw
-" nmap <Leader>y yiw
-" nnoremap <leader>a ggVG
 nnoremap x "_x
-" onoremap ( i(
-" onoremap " i"
-" onoremap { i{
-" onoremap < i<
-" onoremap ' i'
 xnoremap p pgvy
 nnoremap U J
 noremap <leader>n :noh<CR>
