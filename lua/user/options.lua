@@ -33,8 +33,7 @@ local options = {
   wrap = true,                            -- display lines as one long line
   linebreak = true,                        -- companion to wrap, don't split words
   scrolloff = 5,                           -- minimal number of screen lines to keep above and below the cursor
-  sidescrolloff = 5,                       -- minimal number of screen columns either side of cursor if wrap is `false`
-  guifont = "jetbrains mono",               -- the font used in graphical neovim applications
+  sidescrolloff = 5                       -- minimal number of screen columns either side of cursor if wrap is `false`
 }
 
 vim.opt.shortmess:append "c"
