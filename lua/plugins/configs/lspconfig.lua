@@ -10,6 +10,16 @@ require "nvchad_ui.lsp"
 local M = {}
 local utils = require "core.utils"
 
+local servers = {
+	 "cssls",
+	 "html",
+	 "tsserver",
+	"pyright",
+	 "bashls",
+	"jsonls",
+	 "yamlls",
+  "angularls"
+}
 -- export on_attach & capabilities for custom lspconfigs
 
 M.on_attach = function(client, bufnr)
@@ -63,5 +73,16 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
+
+-- lspconfig.pyright.setup {
+--   on_attach = M.on_attach
+-- }
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+  }
+end
 
 return M
