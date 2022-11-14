@@ -4,6 +4,16 @@ if not status_ok then
 end
 
 comment.setup {
+  toggler = {
+    line = '<C-_>',
+    --[[ block = '<C-_>', ]]
+  },
+ opleader = {
+        ---Line-comment keymap
+        line = '<C-_>',
+        ---Block-comment keymap
+        --[[ block = '<C-_>', ]]
+    },
   pre_hook = function(ctx)
     local U = require "Comment.utils"
 

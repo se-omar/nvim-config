@@ -40,54 +40,57 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-  use "wbthomason/packer.nvim"
-  use "nvim-lua/plenary.nvim"
-  use "windwp/nvim-autopairs"
-  use "numToStr/Comment.nvim"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-	use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
-	use "folke/which-key.nvim"
+	use("wbthomason/packer.nvim")
+	use("nvim-lua/plenary.nvim")
+	use("windwp/nvim-autopairs")
+	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("kyazdani42/nvim-web-devicons")
+	use("kyazdani42/nvim-tree.lua")
+	use("akinsho/bufferline.nvim")
+	use("moll/vim-bbye")
+	use("nvim-lualine/lualine.nvim")
+	use("akinsho/toggleterm.nvim")
+	use("ahmedkhalf/project.nvim")
+	use("lewis6991/impatient.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
+	use("goolord/alpha-nvim")
+	use("folke/which-key.nvim")
 
 	-- Colorschemes
-  use "joshdick/onedark.vim"
-	-- Cmp 
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-	use "saadparwaiz1/cmp_luasnip"
-	use "hrsh7th/cmp-nvim-lsp"
-	use "hrsh7th/cmp-nvim-lua"
+	use("joshdick/onedark.vim")
+	-- Cmp
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
+	use("saadparwaiz1/cmp_luasnip")
+	use("hrsh7th/cmp-nvim-lsp")
+	use("hrsh7th/cmp-nvim-lua")
 
 	-- Snippets
-  use "L3MON4D3/LuaSnip"
-  use "rafamadriz/friendly-snippets"
+	use("L3MON4D3/LuaSnip")
+	use("rafamadriz/friendly-snippets")
 
 	-- LSP
-	use "neovim/nvim-lspconfig"
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-	use "jose-elias-alvarez/null-ls.nvim"
-  use "RRethy/vim-illuminate"
+	use("neovim/nvim-lspconfig")
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("RRethy/vim-illuminate")
 
 	-- Telescope
-	use "nvim-telescope/telescope.nvim"
+	use("nvim-telescope/telescope.nvim")
 
 	-- Treesitter
-	use
-		"nvim-treesitter/nvim-treesitter"
+	use("nvim-treesitter/nvim-treesitter")
 
 	-- Git
-	use "lewis6991/gitsigns.nvim"
+	use("lewis6991/gitsigns.nvim")
 
+	use({
+		"nvim-telescope/telescope-fzf-native.nvim",
+		run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
