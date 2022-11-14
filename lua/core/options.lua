@@ -7,6 +7,8 @@ g.toggle_theme_icon = "   "
 g.transparency = config.ui.transparency
 g.theme_switcher_loaded = false
 
+g.python3_host_prog = "C:\\Users\\omarayman\\AppData\\Local\\Programs\\Python\\Python38"
+
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
@@ -93,5 +95,5 @@ local default_providers = {
 }
 
 for _, provider in ipairs(default_providers) do
-  vim.g["loaded_" .. provider .. "_provider"] = 0
+  vim.g["loaded_" .. provider .. "_provider"] = 1
 end
