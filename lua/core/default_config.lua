@@ -7,6 +7,7 @@ M.options = {
     update_url = "https://github.com/NvChad/NvChad",
     update_branch = "main",
   },
+   relativenumber = true,
 }
 
 M.ui = {
@@ -19,7 +20,11 @@ M.ui = {
   transparency = false,
 }
 
-M.plugins = {}
+M.plugins = {
+   status = {
+      alpha = true,
+   },
+ }
 
 -- check core.mappings for table structure
 M.mappings = require "core.mappings"
