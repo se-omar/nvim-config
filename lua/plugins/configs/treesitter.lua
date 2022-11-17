@@ -4,11 +4,21 @@ if not present then
   return
 end
 
+require 'nvim-treesitter.install'.compilers = { "clang" }
+
 require("base46").load_highlight "treesitter"
 
 local options = {
   ensure_installed = {
     "lua",
+    "python",
+    "typescript",
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "scss",
+    "yaml",
   },
 
   highlight = {

@@ -210,6 +210,12 @@ local plugins = {
       require("core.utils").load_mappings "whichkey"
     end,
   },
+
+  ["akinsho/toggleterm.nvim"] = {
+    config = function()
+      require "plugins.configs.toggleterm"
+    end,
+  }
 }
 
 -- Load all plugins
