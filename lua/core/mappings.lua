@@ -317,73 +317,73 @@ M.telescope = {
   },
 }
 
-M.nvterm = {
-  plugin = true,
-
-  t = {
-    -- toggle in terminal mode
-    ["<A-i>"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "toggle floating term",
-    },
-
-    ["<A-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "toggle horizontal term",
-    },
-
-    ["<A-v>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "toggle vertical term",
-    },
-  },
-
-  n = {
-    -- toggle in normal mode
-    ["<A-i>"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "toggle floating term",
-    },
-
-    ["<A-h>"] = {
-      function()
-        require("nvterm.terminal").toggle "horizontal"
-      end,
-      "toggle horizontal term",
-    },
-
-    ["<A-v>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "toggle vertical term",
-    },
-
-    -- new
-
-    ["<leader>h"] = {
-      function()
-        require("nvterm.terminal").new "horizontal"
-      end,
-      "new horizontal term",
-    },
-
-    ["<leader>v"] = {
-      function()
-        require("nvterm.terminal").new "vertical"
-      end,
-      "new vertical term",
-    },
-  },
-}
+-- M.nvterm = {
+--   plugin = true,
+--
+--   t = {
+--     -- toggle in terminal mode
+--     ["<A-i>"] = {
+--       function()
+--         require("nvterm.terminal").toggle "float"
+--       end,
+--       "toggle floating term",
+--     },
+--
+--     ["<A-h>"] = {
+--       function()
+--         require("nvterm.terminal").toggle "horizontal"
+--       end,
+--       "toggle horizontal term",
+--     },
+--
+--     ["<A-v>"] = {
+--       function()
+--         require("nvterm.terminal").toggle "vertical"
+--       end,
+--       "toggle vertical term",
+--     },
+--   },
+--
+--   n = {
+--     -- toggle in normal mode
+--      ["<A-i>"] = {
+--        function()
+--          require("nvterm.terminal").toggle "float"
+--        end,
+--        "toggle floating term",
+--     },
+--     
+--      ["<A-h>"] = {
+--        function()
+--          require("nvterm.terminal").toggle "horizontal"
+--        end,
+--        "toggle horizontal term",
+--     },
+--     
+--      ["<A-v>"] = {
+--        function()
+--          require("nvterm.terminal").toggle "vertical"
+--        end,
+--        "toggle vertical term",
+--      },
+--
+--     -- new
+--
+--     ["<leader>h"] = {
+--       function()
+--         require("nvterm.terminal").new "horizontal"
+--       end,
+--       "new horizontal term",
+--     },
+--
+--     ["<leader>v"] = {
+--       function()
+--         require("nvterm.terminal").new "vertical"
+--       end,
+--       "new vertical term",
+--     },
+--   },
+-- }
 
 M.whichkey = {
   plugin = true,
@@ -489,6 +489,16 @@ M.gitsigns = {
       "Toggle deleted",
     },
   },
+}
+
+M.toggleterm = {
+ plugin = true,
+
+ n = {
+   ["<A-f>"] = {":ToggleTerm direction=float<CR>", "floating terminal"},
+   ["<A-h>"] = {"<cmd>ToggleTerm size=10 direction=horizontal<cr>", "horizontal terminal"},
+   ["<A-v>"] = {"<cmd>ToggleTerm size=80 direction=vertical<cr>", "vertical terminal"}
+ },
 }
 
 return M

@@ -34,15 +34,15 @@ local plugins = {
     end,
   },
 
-  ["NvChad/nvterm"] = {
-    module = "nvterm",
-    config = function()
-      require "plugins.configs.nvterm"
-    end,
-    setup = function()
-      require("core.utils").load_mappings "nvterm"
-    end,
-  },
+  -- ["NvChad/nvterm"] = {
+  --   module = "nvterm",
+  --   config = function()
+  --     require "plugins.configs.nvterm"
+  --   end,
+  --   setup = function()
+  --     require("core.utils").load_mappings "nvterm"
+  --   end,
+  -- },
 
   ["kyazdani42/nvim-web-devicons"] = {
     after = "ui",
@@ -212,10 +212,15 @@ local plugins = {
   },
 
   ["akinsho/toggleterm.nvim"] = {
+    -- event = "BufRead",
     config = function()
       require "plugins.configs.toggleterm"
     end,
+    setup = function()
+      require("core.utils").load_mappings "toggleterm"
+    end,
   }
+
 }
 
 -- Load all plugins
