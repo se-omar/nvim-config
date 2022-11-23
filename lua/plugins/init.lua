@@ -34,16 +34,6 @@ local plugins = {
     end,
   },
 
-  -- ["NvChad/nvterm"] = {
-  --   module = "nvterm",
-  --   config = function()
-  --     require "plugins.configs.nvterm"
-  --   end,
-  --   setup = function()
-  --     require("core.utils").load_mappings "nvterm"
-  --   end,
-  -- },
-
   ["kyazdani42/nvim-web-devicons"] = {
     after = "ui",
     module = "nvim-web-devicons",
@@ -167,7 +157,7 @@ local plugins = {
 
   ["numToStr/Comment.nvim"] = {
     module = "Comment",
-    keys = { "gc", "gb" },
+    keys = { "<C-_", "gb" },
     config = function()
       require("plugins.configs.others").comment()
     end,
