@@ -28,10 +28,11 @@ vim.g.clipboard = {
 vim.opt.relativenumber = true
 vim.opt.linespace = 5
 vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h10" }
-
+vim.opt.hlsearch = true
+vim.opt.incsearch = true
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save.enabled = true
+lvim.format_on_save.enabled = false
 lvim.colorscheme = "onedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -39,20 +40,25 @@ lvim.colorscheme = "onedark"
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
+lvim.keys.normal_mode["<ESC>"] = ":noh<CR>"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.keys.normal_mode["<S-k>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<S-j>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<M-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<M-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.normal_mode["L"] = "$"
 lvim.keys.normal_mode["H"] = "^"
 lvim.keys.insert_mode["jk"] = "<ESC>"
-lvim.lsp.buffer_mappings.normal_mode['gh'] = lvim.lsp.buffer_mappings.normal_mode['K']
 lvim.keys.normal_mode["<C-_>"] = "<Plug>(comment_toggle_linewise_current)"
 lvim.keys.visual_mode["<C-_>"] = "<Plug>(comment_toggle_linewise_visual)"
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+lvim.keys.normal_mode["n"] = "nzzzv"
+lvim.keys.normal_mode["N"] = "Nzzzv"
+lvim.keys.normal_mode["<leader>sr"] = [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]
 
 lvim.builtin.terminal.execs = {
-  { vim.o.shell, "<M-h>", "Horizontal Terminal", "horizontal", 0.3 },
-  { vim.o.shell, "<M-v>", "Vertical Terminal", "vertical", 0.4 },
-  { vim.o.shell, "<M-f>", "Float Terminal", "float", nil },
+  { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
+  { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
+  { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
 }
 
 -- unmap a default keymapping
@@ -111,6 +117,7 @@ lvim.builtin.nvimtree.setup.renderer.highlight_git = nil
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = nil
 
 -- if you don't want all the parsers change this to a table of the ones you want
+lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.ensure_installed = {
   "c",
   "lua",
@@ -124,6 +131,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
+lvim.builtin.treesitter.autotag.enable = true
 
 -- generic LSP settings
 
@@ -202,8 +210,15 @@ lvim.builtin.treesitter.highlight.enable = true
 
 -- Additional Plugins
 lvim.plugins = {
-  { "navarasu/onedark.nvim" },
+  { "navarasu/onedark.nvim",
+    config = function()
+      require("onedark").setup { style = 'darker' }
+    end
+  },
+  { "ellisonleao/gruvbox.nvim" },
+  { "windwp/nvim-ts-autotag" }
 }
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
