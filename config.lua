@@ -33,7 +33,6 @@ vim.opt.incsearch = true
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
-lvim.colorscheme = "onedark"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -59,6 +58,11 @@ lvim.builtin.terminal.execs = {
   { vim.o.shell, "<M-1>", "Horizontal Terminal", "horizontal", 0.3 },
   { vim.o.shell, "<M-2>", "Vertical Terminal", "vertical", 0.4 },
   { vim.o.shell, "<M-3>", "Float Terminal", "float", nil },
+}
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+   { exe = "black", filetypes = { "python" } },
 }
 
 -- unmap a default keymapping
@@ -213,12 +217,12 @@ lvim.plugins = {
   { "navarasu/onedark.nvim",
     config = function()
       require("onedark").setup { style = 'darker' }
+
+      vim.cmd("colorscheme onedark")
     end
   },
-  { "ellisonleao/gruvbox.nvim" },
   { "windwp/nvim-ts-autotag" }
 }
-
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
