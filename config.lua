@@ -26,7 +26,6 @@ vim.g.clipboard = {
 }
 
 vim.opt.relativenumber = true
-vim.opt.linespace = 5
 vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h10" }
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
