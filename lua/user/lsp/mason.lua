@@ -49,4 +49,6 @@ for _, server in pairs(servers) do
 	end
 
 	lspconfig[server].setup(opts)
+
+  lspconfig.angularls.setup{}
 end
