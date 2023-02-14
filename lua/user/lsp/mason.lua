@@ -7,6 +7,7 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"yamlls",
+  "angularls"
 }
 
 local settings = {
@@ -50,5 +51,5 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 
-  lspconfig.angularls.setup{}
+  -- lspconfig.angularls.setup{}
 end
