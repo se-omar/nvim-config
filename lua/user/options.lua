@@ -41,5 +41,10 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters
 vim.opt.linebreak = true
 
 vim.opt.relativenumber = true
---vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h10" }
+vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h10" }
 vim.opt.incsearch = true
+
+if vim.g.neovide then
+  vim.g.neovide_cursor_animation_length = 0.06
+  vim.g.neovide_fullscreen = true
+end
