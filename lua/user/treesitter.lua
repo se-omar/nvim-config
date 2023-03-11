@@ -9,7 +9,24 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
+  ensure_installed = {
+    "lua",
+    "markdown",
+    "markdown_inline",
+    "bash",
+    "python",
+    "css",
+    "dart",
+    "html",
+    "javascript",
+    "json",
+    "pug",
+    "scss",
+    "sql",
+    "tsx",
+    "typescript",
+    "yaml",
+  }, -- put the language you want in this array
 
   auto_install = true,
   -- ensure_installed = "all", -- one of "all" or a list of languages
@@ -18,7 +35,7 @@ configs.setup {
 
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = { "css" }, -- list of language that will be disabled
+    disable = { "" }, -- list of language that will be disabled
   },
   autopairs = {
     enable = true,

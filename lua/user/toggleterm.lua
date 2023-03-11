@@ -4,12 +4,12 @@ if not status_ok then
 end
 
 toggleterm.setup {
-  size = 20,
+  size = 50,
   open_mapping = [[<c-\>]],
   hide_numbers = true,
   shade_terminals = true,
   shading_factor = 2,
-  start_in_insert = true,
+  start_in_insert = false,
   insert_mappings = true,
   persist_size = true,
   direction = "vertical",
