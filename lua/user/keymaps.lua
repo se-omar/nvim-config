@@ -98,5 +98,8 @@ keymap("n", "n", "nzzzv", opts)
 keymap("n", "N", "Nzzzv", opts)
 keymap("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
+keymap('n', 'zR', require('ufo').openAllFolds, opts)
+keymap('n', 'zM', require('ufo').closeAllFolds)
+
 -- <leader>w saves
 keymap("n", "<leader>w", ":w<CR>", opts)

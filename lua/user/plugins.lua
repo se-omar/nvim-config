@@ -103,6 +103,7 @@ return packer.startup(function(use)
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
   use 'tpope/vim-fugitive'
+use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
