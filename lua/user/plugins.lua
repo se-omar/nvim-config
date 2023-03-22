@@ -105,6 +105,10 @@ return packer.startup(function(use)
   use 'tpope/vim-fugitive'
 use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
 
+use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+  require('git-conflict').setup()
+end}
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
