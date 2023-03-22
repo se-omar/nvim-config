@@ -63,7 +63,7 @@ return packer.startup(function(use)
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
-  use 'navarasu/onedark.nvim'
+  use "navarasu/onedark.nvim"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
@@ -102,12 +102,18 @@ return packer.startup(function(use)
   use { "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
-  use 'tpope/vim-fugitive'
-use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+  use "tpope/vim-fugitive"
+  use { "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" }
 
-use {'akinsho/git-conflict.nvim', tag = "*", config = function()
-  require('git-conflict').setup()
-end}
+  use {
+    "akinsho/git-conflict.nvim",
+    tag = "*",
+    config = function()
+      require("git-conflict").setup()
+    end,
+  }
+
+  use "ThePrimeagen/harpoon"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
