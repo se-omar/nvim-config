@@ -41,7 +41,7 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters
 vim.opt.linebreak = true
 
 vim.opt.relativenumber = true
-vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h10" }
+vim.opt.guifont = { "JetBrainsMono Nerd Font Mono", ":h9" }
 vim.opt.incsearch = true
 
 vim.opt.foldcolumn = '0' -- '0' is not bad
